@@ -72,15 +72,10 @@ dependencies:
 - conda-forge::pygments=2.2.0=py35_0
 - conda-forge::pyopenssl=16.0.0=py35_0
 - conda-forge::pyparsing=2.1.10=py35_0
-- conda-forge::pyqt=4.11.4=py35_2
 - conda-forge::python=3.5.2=5
 - conda-forge::python-dateutil=2.6.0=py35_0
 - conda-forge::python-engineio=1.0.0=py35_0
 - conda-forge::python-socketio=1.5.1=py35_0
-- conda-forge::pytz=2016.10=py35_0
-- conda-forge::pyzmq=16.0.2=py35_1
-- conda-forge::qt=4.8.7=7
-- conda-forge::qtconsole=4.2.1=py35_1
 - conda-forge::readline=6.2=0
 - conda-forge::scikit-image=0.12.3=np112py35_0
 - conda-forge::scikit-learn=0.18=np112py35_blas_openblas_204
@@ -127,4 +122,3 @@ dependencies:
   - theano==0.8.2
   - tqdm==4.11.2
 prefix: /home/carnd/anaconda3/envs/dl
-
