@@ -1,18 +1,18 @@
 FROM nvidia/cuda:8.0-cudnn5-devel
 
 # Pick up some TF dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
         python3-pip \
         git \
         wget \
         python3 \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip --no-cache-dir install -r /tmp/requirements.txt && \
-    python -m ipykernel.kernelspec
+RUN pip --no-cache-dir install -r /tmp/requirements.txt
 
 # TensorBoard
 EXPOSE 6006
