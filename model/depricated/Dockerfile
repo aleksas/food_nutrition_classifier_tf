@@ -12,7 +12,7 @@ RUN apt-get update \
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip --no-cache-dir install -r /tmp/requirements.txt
+RUN pip3 --no-cache-dir install -r /tmp/requirements.txt
 
 # TensorBoard
 EXPOSE 6006
