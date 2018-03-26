@@ -8,7 +8,7 @@ random.seed(1)
 sdl = SQLiteDataLoader('data.sqlite', 'image_data_299.sqlite')
 
 classification_id = 12
-max_c = 2048
+max_c = 4096
 
 dst_directory = 'food_images/cid%d_max%d' % (classification_id, max_c)
 
