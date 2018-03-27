@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-devel
+FROM ubuntu:16.04
 
 # Pick up some TF dependencies
 RUN apt-get update \
@@ -15,10 +15,5 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install --upgrade pip
 RUN pip3 install -U setuptools
 RUN pip3 --no-cache-dir install -r /tmp/requirements.txt
-
-# TensorBoard
-EXPOSE 6006
-# IPython
-EXPOSE 8888
 
 WORKDIR "~/"
