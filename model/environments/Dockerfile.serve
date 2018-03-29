@@ -3,7 +3,6 @@ FROM ubuntu:16.04
 # Pick up some TF dependencies
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-        apt-utils \
         build-essential \
         curl \
         libcurl3-dev \
@@ -18,11 +17,13 @@ RUN apt-get update \
         software-properties-common \
         swig \
         zip \
-        zlib1g-dev\
- && apt-get install --reinstall python-setuptools \
+        zlib1g-dev
+
+RUN apt-get install -y --reinstall python-setuptools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip setuptools wheel
 RUN pip install tensorflow-serving-api
 
 WORKDIR "~/"
