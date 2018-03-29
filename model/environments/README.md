@@ -1,18 +1,28 @@
-# pip
+# Prepare environment using pip
 
-Either build environment using requirements.txt or requirements_gpu.txt using pip  (e.g. pip install -r  requirements.txt)
+## CPU
+`pip install -r  requirements.txt`
 
-# Docker
+## GPU
+`pip install -r requirements_gpu.txt`
+
+# Prepare docker container (RECOMMENDED)
 
 ## Build container
-Build a docker image using following command `docker build -t "food_nutrition_classifier:dockerfile" . -f Dockerfile.gpu` .
 
-## Pull container
-`docker pull food_nutrition_classifier:dockerfile`
+### CPU
+`docker build -t "food_nutrition_classifier:cpu" . -f Dockerfile`
+### GPU
+`docker build -t "food_nutrition_classifier:gpu" . -f Dockerfile.gpu`
 
+### Serve model
+`docker build -t "food_nutrition_classifier:serve" . -f Dockerfile.serve`
 
 ## Run container
+
 ### GPU
-nvidia-docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:dockerfile
+`nvidia-docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:cpu`
 ### CPU
-docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:dockerfile
+`docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:gpu`
+### Serve model
+`docker run -i -t -p 9000:9000 food_nutrition_classifier:serve`
