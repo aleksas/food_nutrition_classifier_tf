@@ -21,8 +21,8 @@
 ## Run container
 
 ### GPU
-`nvidia-docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:cpu`
+`nvidia-docker run -i -t -v YOUR_SHARED_DIRECTORY:/tmp/model -p 8888:8888 -p 6006:6006 food_nutrition_classifier:gpu`
 ### CPU
-`docker run -i -t -p 8888:8888 -p 6006:6006 food_nutrition_classifier:gpu`
+`docker run -i -t -v YOUR_SHARED_DIRECTORY:/tmp/model -p 8888:8888 -p 6006:6006 food_nutrition_classifier:cpu`
 ### Serve model
-`docker run -i -t -p 9000:9000 food_nutrition_classifier:serve`
+`docker run -i -t -v YOUR_SHARED_DIRECTORY:/tmp/model -p 9000:9000 food_nutrition_classifier:serve`
