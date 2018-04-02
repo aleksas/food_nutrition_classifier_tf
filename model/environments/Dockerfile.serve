@@ -19,4 +19,4 @@ EXPOSE 9000
 
 
 ENTRYPOINT ["tensorflow_model_server"]
-CMD ["--port=9000", "--model_base_path=/tmp/serve-model"]
+CMD ["--port=9000", "--model_base_path=/tmp/model/serve"]
