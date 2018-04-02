@@ -1,6 +1,7 @@
 [//]: # (Image References)
 
-[image1]: ./images/sample_dog_output.png "Sample Output"
+[image1]: ./images/classification.png "Nutrition class samples"
+[image2]: ./images/class_samples.png "Class samples"
 
 
 ## Project Overview
@@ -9,6 +10,9 @@ Given an image of a food dish, algorithm will identify an estimate of the dish n
 
 ![Sample Output][image1]
 
+Here are some examples of the classes
+
+![Sample Output][image2]
 
 ## Project Instructions
 
@@ -21,22 +25,11 @@ Given an image of a food dish, algorithm will identify an estimate of the dish n
 		cd food_nutrition_classifier
 	```
 2. Download the meta-data and image database and place those in the the same directory as this notebook.
-3. Install [Miniconda](https://conda.io/miniconda.html) and create an environment from appropriate yml file located in environmens folder.  
-
-	For __Mac/OSX__:
-	```
-		conda env create -f requirements/dl_env_mac.yml
-		source activate recipes
-	```
-
-	For __Linux__:
-	```
-		conda env create -f requirements/dl_env_linux.yml
-		source activate recipes
-	```
+3. Install environment
+* See [environment setup instructions](./environments)
 
 6. Open the notebook and follow the instructions.
 
 	```
-		jupyter notebook Transfer_Learning_Solution.ipynb
+		jupyter notebook model/Transfer_Learning_Solution.ipynb
 	```
