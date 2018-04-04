@@ -61,6 +61,20 @@ class SQLiteDataLoader:
 
 		return self.nutrition_cache[classification_id]
 
+	def get_centroids(self, classification_id):
+		if not classification_id in self.centroid_cache:
+			q = 'SELECT protein, fat, carbohydrate, class FROM centroids, recipe_classes WHERE centroids.recipe_id = recipe_classes.recipe_id AND recipe_classes.classification_id = ?'
+
+			params = (classification_id,)
+			connection = sqlite3.connect(self.database_path)
+
+			cursor = connection.cursor()
+			self.centroid_cache[classification_id] = cursor.execute(q, params).fetchall()
+
+			connection.close()
+
+		return self.centroid_cache[classification_id]
+
 	def get_image_count_by_class(self, ci, classification_id, factor, max):
 		if not classification_id in self.count_cache:
 			self.count_cache[classification_id] = {}

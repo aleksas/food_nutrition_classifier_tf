@@ -2,6 +2,7 @@ import os
 import random
 from PIL import Image
 from sqlite_data_loader import SQLiteDataLoader
+import numpy as np
 
 random.seed(1)
 
@@ -22,6 +23,8 @@ test_p = 0.1
 valid_p = 0.1
 
 split_db = False#True
+
+np.savetxt(dst_directory + '/centroids.csv', sdl.get_centroids(12), fmt='%.6f %.6f %.6f %d')
 
 for ci in sdl.get_classes(classification_id):
     ci_ids = sdl.get_image_ids_by_class(ci, classification_id, 0, 100000)
