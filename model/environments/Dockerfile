@@ -12,8 +12,13 @@ RUN apt-get update \
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip3 install --upgrade pip
-RUN pip3 install -U setuptools
-RUN pip3 --no-cache-dir install -r /tmp/requirements.txt
+RUN pip3 install --upgrade pip \
+ && pip3 install -U setuptools \
+ && pip3 --no-cache-dir install -r /tmp/requirements_gpu.txt
 
-WORKDIR "~/"
+RUN mkdir -p /tmp/model
+WORKDIR "/tmp/model"
+
+EXPOSE 6006
+EXPOSE 8888
+
